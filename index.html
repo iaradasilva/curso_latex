@@ -1,1 +1,67 @@
 <link rel="stylesheet" href="styles.css">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de LaTeX - Universidade</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar Superior -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">📄 <span>Curso de LaTeX</span></a>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Início</a></li>
+                <li><a href="https://github.com/iaradasilva/curso_latex" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Layout do Curso -->
+    <div class="course-layout">
+        
+        <!-- Sidebar Esquerda -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Visão Geral</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="active">Introdução ao LaTeX</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Módulos</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="#">01. Estrutura Básica</a></li>
+                    <li><a href="#">02. Formatação de Texto</a></li>
+                    <li><a href="#">03. Fórmulas Matemáticas</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="content-area">
+            <div class="card-container">
+                <span class="badge badge-green">Módulo 1 • Configuração</span>
+                <h1>Instalação e Primeiro Documento</h1>
+                <p>Bem-vindo ao curso de LaTeX! Aqui você aprenderá a criar documentos acadêmicos, artigos e apresentações de alto nível.</p>
+                
+                <div class="callout callout-tip">
+                    💡 **Dica:** Recomendamos utilizar o Overleaf para iniciar sem criar instalações locais.
+                </div>
+
+                <h2>Exemplo de Código Base</h2>
+                <pre><code>\documentclass{article}
+\begin{document}
+    Olá, mundo! Meu primeiro documento em LaTeX.
+\end{document}</code></pre>
+            </div>
+        </main>
+
+    </div>
+
+</body>
+</html>

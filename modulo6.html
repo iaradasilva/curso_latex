@@ -60,60 +60,64 @@
 
         <main class="content-area">
             <div class="card-container">
-                <span class="badge badge-green">MÓDULO 6 • PRÁTICA INTEGRADA</span>
-                <h1>Criando um Documento Completo no Overleaf</h1>
-                <p>Aprenda a unir capa, resumo, corpo do texto e bibliografia automatizada em um único projeto.</p>
+                <span class="badge badge-green">MÓDULO 6 • LAB PRÁTICO</span>
+                <h1>Passo a Passo: Criando seu Primeiro Documento Completo</h1>
+                <p>Nesta aula prática, você aprenderá a construir cada seção de um trabalho acadêmico (capa, resumo, corpo do texto e bibliografia) do zero no Overleaf.</p>
 
-                <h2>1. Estrutura do Arquivo Principal (<code>main.tex</code>)</h2>
-                <p>Copie e cole a estrutura completa abaixo no seu arquivo principal no Overleaf:</p>
+                <h2>Etapa 1: Criar o Projeto e Configurar o Preâmbulo</h2>
+                <p>Abra o Overleaf, crie um novo projeto em branco (<em>Blank Project</em>) e defina a classe do documento com os pacotes essenciais no topo do arquivo <code>main.tex</code>:</p>
                 <pre><code>\documentclass[12pt, a4paper]{article}
 
-% --- PACOTES BÁSICOS ---
-\usepackage[utf8]{inputenc}    % Suporte para acentuação
-\usepackage[brazil]{babel}     % Tradução automática (ex: "Contents" -> "Sumário")
-\usepackage[margin=2.5cm]{geometry} % Configuração de margens
-\usepackage{cite}              % Suporte a citações
+% --- PACOTES DE CONFIGURAÇÃO ---
+\usepackage[utf8]{inputenc}        % Suporte a caracteres acentuados
+\usepackage[brazil]{babel}         % Idioma em português (traduções automáticas)
+\usepackage[margin=2.5cm]{geometry} % Definição das margens da página
+\usepackage{cite}                  % Gerenciamento de citações</code></pre>
 
-% --- METADADOS DA CAPA ---
-\title{\textbf{Título do Seu Trabalho: Subtítulo Explicativo}}
+                <h2>Etapa 2: Como Criar a Capa</h2>
+                <p>A capa é construída em duas partes: os metadados (no preâmbulo) e o comando de exibição no corpo do documento.</p>
+                <p>1. Adicione as informações da capa antes do <code>\begin{document}</code>:</p>
+                <pre><code>% --- INFORMAÇÕES DA CAPA ---
+\title{\textbf{Título do Trabalho Acadêmico: Subtítulo}}
 \author{Seu Nome Completo}
-\date{\today}                  % Data automática
+\date{\today}                      % Insere a data atual automaticamente</code></pre>
 
-\begin{document}
+                <p>2. Dentro do <code>\begin{document}</code>, gere a página da capa e force uma quebra de página:</p>
+                <pre><code>\begin{document}
 
-% --- 1. CAPA ---
+% --- PÁGINA 1: CAPA ---
 \maketitle
-\thispagestyle{empty}          % Oculta o número da página na capa
-\newpage
+\thispagestyle{empty}              % Oculta o número da página na capa
+\newpage                           % Pula para a próxima página</code></pre>
 
-% --- 2. RESUMO ---
-\pagenumbering{arabic}         % Inicia a numeração de páginas em números arábicos
+                <h2>Etapa 3: Como Criar o Resumo (Abstract)</h2>
+                <p>Na segunda página, configure a numeração de páginas e adicione o ambiente <code>abstract</code>:</p>
+                <pre><code>% --- PÁGINA 2: RESUMO ---
+\pagenumbering{arabic}             % Inicia a contagem de páginas (1, 2, 3...)
 \begin{abstract}
-Este é o resumo do trabalho. Apresente aqui brevemente o objetivo da pesquisa, a metodologia empregada e os principais resultados obtidos.
+Este é o resumo do seu trabalho. Apresente aqui brevemente o objetivo da pesquisa, os métodos aplicados e os principais resultados encontrados.
 
 \vspace{0.5cm}
 \noindent \textbf{Palavras-chave:} LaTeX, Overleaf, Capa, Resumo, Bibliografia.
 \end{abstract}
 
-\newpage
+\newpage                           % Pula para a página do conteúdo principal</code></pre>
 
-% --- 3. CORPO DO TEXTO ---
+                <h2>Etapa 4: Escrever o Corpo do Texto e Inserir Citações</h2>
+                <p>Organize o conteúdo do seu trabalho usando seções (<code>\section</code>). Para citar autores, utilize o comando <code>\cite{chave}</code>:</p>
+                <pre><code>% --- PÁGINA 3 EM DIANTE: CORPO DO TEXTO ---
 \section{Introdução}
-Esta é a introdução do documento. Para citar uma referência, usamos o comando \verb|\cite{chave}|. 
+Esta é a introdução do documento. 
 
-Por exemplo: segundo Lamport \cite{lamport1994latex}, o uso do LaTeX facilita a escrita técnica. Outro clássico da área é o trabalho de Knuth \cite{knuth1984texbook}.
+Segundo a literatura \cite{lamport1994latex}, o sistema LaTeX automatiza a tipografia. Outro trabalho fundamental é o de Knuth \cite{knuth1984texbook}.
 
 \section{Desenvolvimento}
-Aqui você pode organizar o conteúdo principal dividindo-o em seções e subseções.
+Escreva aqui o desenvolvimento do seu trabalho, inserindo tabelas, figuras ou fórmulas conforme necessário.</code></pre>
 
-% --- 4. REFERÊNCIAS BIBLIOGRÁFICAS ---
-\bibliographystyle{plain}
-\bibliography{referencias}
-
-\end{document}</code></pre>
-
-                <h2>2. Criando o Arquivo de Bibliografia (<code>referencias.bib</code>)</h2>
-                <p>No painel lateral esquerdo do Overleaf, clique em <strong>Novo Arquivo</strong> (ícone de folha com <code>+</code>), nomeie como <code>referencias.bib</code> e insira o código abaixo:</p>
+                <h2>Etapa 5: Criar o Arquivo de Bibliografia (<code>referencias.bib</code>)</h2>
+                <p>1. No painel de arquivos do Overleaf (lado esquerdo), clique no ícone de <strong>Novo Arquivo</strong> (folha com sinal de <code>+</code>).</p>
+                <p>2. Digite exatamente o nome <code>referencias.bib</code> e clique em <strong>Create</strong>.</p>
+                <p>3. Abra o arquivo <code>referencias.bib</code> e insira as entradas BibTeX das suas fontes:</p>
                 <pre><code>@book{lamport1994latex,
   author    = {Leslie Lamport},
   title     = {LaTeX: A Document Preparation System},
@@ -128,8 +132,17 @@ Aqui você pode organizar o conteúdo principal dividindo-o em seções e subse�
   publisher = {Addison-Wesley}
 }</code></pre>
 
-                <h2>3. Compilação e Resultado</h2>
-                <p>Volte ao arquivo <code>main.tex</code> e clique em <strong>Recompile</strong> (ou use o atalho <code>Ctrl + Enter</code>) para gerar o PDF completo com as páginas formatadas.</p>
+                <h2>Etapa 6: Gerar a Lista de Referências e Compilar</h2>
+                <p>No final do seu arquivo <code>main.tex</code>, antes do <code>\end{document}</code>, conecte o estilo da bibliografia e o arquivo <code>.bib</code>:</p>
+                <pre><code>% --- REFERÊNCIAS BIBLIOGRÁFICAS ---
+\bibliographystyle{plain}
+\bibliography{referencias}
+
+\end{document}</code></pre>
+
+                <div class="callout callout-tip">
+                    💡 <strong>Passo Final:</strong> Clique no botão verde ou azul <strong>Recompile</strong> no topo da tela do Overleaf (ou use <code>Ctrl + Enter</code>) para ver o seu PDF de múltiplas páginas gerado com sucesso!
+                </div>
 
                 <div class="lesson-footer">
                     <a href="modulo5.html">&larr; Módulo Anterior</a>

@@ -1,15 +1,19 @@
 :root {
-    --bg-main: #0B0F17;
-    --bg-card: #131B29;
-    --bg-sidebar: #0B0F17;
+    --bg-main: #0E131F;
+    --bg-card: #182030;
+    --bg-sidebar: #0B0E17;
     --text-primary: #F3F4F6;
     --text-secondary: #9CA3AF;
     --text-muted: #6B7280;
-    --accent-green: #10B981;
-    --accent-green-glow: rgba(16, 185, 129, 0.15);
-    --border-color: #1F2937;
-    --code-bg: #1A2332;
-    --code-border: #2D3748;
+    
+    /* Cores de Destaque Estilo Overleaf */
+    --accent-green: #47A853;
+    --accent-green-glow: rgba(71, 168, 83, 0.18);
+    --accent-green-hover: #3B9144;
+    
+    --border-color: #242E42;
+    --code-bg: #111724;
+    --code-border: #2D3A52;
 }
 
 /* Reset Global */
@@ -29,7 +33,7 @@ body {
 
 /* Navbar Superior */
 .navbar {
-    background-color: rgba(11, 15, 23, 0.85);
+    background-color: rgba(11, 14, 23, 0.90);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-color);
     padding: 0.9rem 2rem;
@@ -136,7 +140,7 @@ body {
 }
 
 .sidebar-menu a.active {
-    color: var(--accent-green);
+    color: #FFFFFF;
     background-color: var(--accent-green-glow);
     border-left: 3px solid var(--accent-green);
     font-weight: 600;
@@ -149,4 +153,204 @@ body {
     gap: 0.75rem;
     margin-top: 0.5rem;
     padding-left: 0.8rem;
+}
+
+.team-card {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+.team-card:hover {
+    background-color: rgba(71, 168, 83, 0.08);
+    border-color: rgba(71, 168, 83, 0.35);
+    transform: translateY(-1px);
+}
+
+.team-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.team-name {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.team-role {
+    font-size: 0.73rem;
+    color: var(--accent-green);
+    font-weight: 500;
+    margin-top: 0.15rem;
+}
+
+.team-institution {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    margin-top: 0.1rem;
+}
+
+/* Área de Conteúdo Central */
+.content-area {
+    flex: 1;
+    padding: 2.5rem 3.5rem;
+}
+
+.card-container {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 3.5rem;
+    max-width: 920px;
+    margin: 0 auto;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+}
+
+/* Tipografia */
+.card-container h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--text-primary);
+    margin-bottom: 0.8rem;
+}
+
+.card-container h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.card-container h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-top: 1.8rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-primary);
+}
+
+.card-container p {
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    font-size: 1.02rem;
+}
+
+.card-container ul, 
+.card-container ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1.8rem;
+    color: var(--text-secondary);
+}
+
+.card-container li {
+    margin-bottom: 0.6rem;
+}
+
+/* Callouts / Avisos Especiais */
+.callout {
+    padding: 1.2rem;
+    border-radius: 10px;
+    margin: 1.8rem 0;
+    border-left: 4px solid;
+    font-size: 0.95rem;
+}
+
+.callout-info {
+    background: rgba(37, 99, 235, 0.1);
+    border-color: #3B82F6;
+    color: #93C5FD;
+}
+
+.callout-tip {
+    background: rgba(71, 168, 83, 0.12);
+    border-color: var(--accent-green);
+    color: #8DE097;
+}
+
+.callout-warning {
+    background: rgba(245, 158, 11, 0.1);
+    border-color: #F59E0B;
+    color: #FDE68A;
+}
+
+/* Blocos de Código e Tags */
+code {
+    background-color: var(--code-bg);
+    border: 1px solid var(--code-border);
+    color: #9EEFA9;
+    padding: 0.2rem 0.45rem;
+    border-radius: 6px;
+    font-family: 'Fira Code', Consolas, Monaco, monospace;
+    font-size: 0.88rem;
+}
+
+pre {
+    background-color: var(--code-bg);
+    border: 1px solid var(--code-border);
+    padding: 1.2rem;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+pre code {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: #E5E7EB;
+}
+
+/* Badges / Selos de Aula */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.badge-green { 
+    background: rgba(71, 168, 83, 0.2); 
+    color: #6EDB78; 
+}
+
+.badge-blue { 
+    background: rgba(59, 130, 246, 0.2); 
+    color: #60A5FA; 
+}
+
+/* Rodapé da Aula */
+.lesson-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.lesson-footer a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.lesson-footer a:hover {
+    color: var(--accent-green);
 }

@@ -62,10 +62,10 @@
             <div class="card-container">
                 <span class="badge badge-green">MÓDULO 5 • AUTOMAÇÃO</span>
                 <h1>Gerenciamento de Referências com BibTeX</h1>
-                <p>Automatize as citações e a lista bibliográfica do seu trabalho acadêmico sem formatar nada à mão.</p>
+                <p>Automatize as citações e a lista bibliográfica do seu trabalho acadêmico sem precisar formatar manualmente cada referência.</p>
 
-                <h2>1. O arquivo <code>.bib</code></h2>
-                <p>Crie um arquivo separado chamado <code>referencias.bib</code> e adicione as suas fontes:</p>
+                <h2>1. O Arquivo <code>.bib</code></h2>
+                <p>Crie um arquivo separado chamado <code>referencias.bib</code> no seu projeto e adicione a estrutura das suas fontes:</p>
                 <pre><code>@article{lamport1986,
   author = {Leslie Lamport},
   title = {LaTeX: A Document Preparation System},
@@ -73,13 +73,17 @@
   publisher = {Addison-Wesley}
 }</code></pre>
 
-                <h2>2. Citando no Texto</h2>
-                <p>No seu documento principal (<code>.tex</code>), use os comandos:</p>
+                <h2>2. Citando Referências no Texto</h2>
+                <p>No seu documento principal (<code>main.tex</code>), utilize o comando <code>\cite{chave}</code> para citar qualquer obra cadastrada no seu arquivo <code>.bib</code>:</p>
                 <pre><code>Segundo \cite{lamport1986}, o sistema simplifica a escrita científica.
 
-% No final do arquivo para gerar a lista bibliográfica:
+% No final do arquivo para gerar a lista de referências:
 \bibliographystyle{plain} % ou abntex2-alf para ABNT
 \bibliography{referencias}</code></pre>
+
+                <div class="callout callout-tip">
+                    💡 <strong>Vantagem do BibTeX:</strong> O LaTeX lista apenas as obras que foram efetivamente citadas no texto, formatando tudo automaticamente em ordem alfabética ou numérica.
+                </div>
 
                 <div class="lesson-footer">
                     <a href="modulo4.html">&larr; Módulo Anterior</a>

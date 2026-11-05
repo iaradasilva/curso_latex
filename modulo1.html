@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de LaTeX - Módulo 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">📄 <span>Curso de LaTeX</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Aulas</a></li>
+                <li><a href="https://github.com/iaradasilva/curso_latex" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="course-layout">
+        
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">VISÃO GERAL DO CURSO</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="index.html">O que é o LaTeX?</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">MÓDULOS</h3>
+                <ul class="sidebar-menu">
+                    <!-- AQUI: Marca o módulo 1 como ativo nesta página -->
+                    <li><a href="modulo1.html" class="active">01. Estrutura Básica</a></li>
+                    <li><a href="modulo2.html">02. Formatação de Texto</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Conteúdo Principal do Módulo 1 -->
+        <main class="content-area">
+            <div class="card-container">
+                <span class="badge badge-green">MÓDULO 1 • SINTAXE</span>
+                <h1>Estrutura Básica de um Documento</h1>
+                <p>Todo documento em LaTeX divide-se em preâmbulo e corpo do documento...</p>
+                
+                <pre><code>\documentclass{article}
+\begin{document}
+  Olá, mundo!
+\end{document}</code></pre>
+            </div>
+        </main>
+
+    </div>
+
+</body>
+</html>

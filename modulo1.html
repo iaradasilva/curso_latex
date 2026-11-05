@@ -31,24 +31,62 @@
             <div class="sidebar-section">
                 <h3 class="sidebar-title">MÓDULOS</h3>
                 <ul class="sidebar-menu">
-                    <!-- AQUI: Marca o módulo 1 como ativo nesta página -->
                     <li><a href="modulo1.html" class="active">01. Estrutura Básica</a></li>
                     <li><a href="modulo2.html">02. Formatação de Texto</a></li>
+                    <li><a href="modulo3.html">03. Fórmulas Matemáticas</a></li>
+                    <li><a href="modulo4.html">04. Imagens e Tabelas</a></li>
+                    <li><a href="modulo5.html">05. Referências e BibTeX</a></li>
                 </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">EQUIPE DO CURSO</h3>
+                <div class="team-container">
+                    <div class="team-card">
+                        <div class="team-info">
+                            <span class="team-name">Profa. Iara da Silva</span>
+                            <span class="team-role">Instrutora</span>
+                            <span class="team-institution">Universidade</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </aside>
 
-        <!-- Conteúdo Principal do Módulo 1 -->
         <main class="content-area">
             <div class="card-container">
                 <span class="badge badge-green">MÓDULO 1 • SINTAXE</span>
                 <h1>Estrutura Básica de um Documento</h1>
-                <p>Todo documento em LaTeX divide-se em preâmbulo e corpo do documento...</p>
-                
-                <pre><code>\documentclass{article}
+                <p>Todo documento em LaTeX divide-se em duas partes principais: o <strong>preâmbulo</strong> (configurações e pacotes) e o <strong>corpo do documento</strong> (conteúdo visível).</p>
+
+                <h2>Exemplo Mínimo Funcional</h2>
+                <pre><code>\documentclass[12pt, a4paper]{article}
+
+% Preâmbulo (pacotes e configurações)
+\usepackage[utf8]{inputenc}
+\usepackage[pt-BR]{babel}
+
+\title{Meu Primeiro Documento}
+\author{Nome do Aluno}
+\date{\today}
+
 \begin{document}
-  Olá, mundo!
+
+\maketitle
+
+\section{Introdução}
+Este é o meu primeiro documento criado em LaTeX durante o curso na universidade!
+
 \end{document}</code></pre>
+
+                <div class="callout callout-info">
+                    ℹ️ <strong>Atenção:</strong> Todo o texto do seu documento precisa estar obrigatoriamente dentro do ambiente <code>\begin{document}</code> e <code>\end{document}</code>.
+                </div>
+
+                <div class="lesson-footer">
+                    <a href="index.html">&larr; Introdução</a>
+                    <a href="modulo2.html">Próximo Módulo &rarr;</a>
+                </div>
             </div>
         </main>
 

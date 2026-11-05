@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de LaTeX - Módulo 5</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">📄 <span>Curso de LaTeX</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Aulas</a></li>
+                <li><a href="https://github.com/iaradasilva/curso_latex" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="course-layout">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">VISÃO GERAL DO CURSO</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="index.html">O que é o LaTeX?</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">MÓDULOS</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="modulo1.html">01. Estrutura Básica</a></li>
+                    <li><a href="modulo2.html">02. Formatação de Texto</a></li>
+                    <li><a href="modulo3.html">03. Fórmulas Matemáticas</a></li>
+                    <li><a href="modulo4.html">04. Imagens e Tabelas</a></li>
+                    <li><a href="modulo5.html" class="active">05. Referências e BibTeX</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <div class="card-container">
+                <span class="badge badge-green">MÓDULO 5 • AUTOMAÇÃO</span>
+                <h1>Gerenciamento de Referências com BibTeX</h1>
+                <p>Automatize as citações e a lista bibliográfica do seu trabalho acadêmico sem formatar nada à mão.</p>
+
+                <h2>1. O arquivo `.bib`</h2>
+                <p>Crie um ficheiro separado chamado <code>referencias.bib</code> e adicione as suas fontes:</p>
+                <pre><code>@article{lamport1986,
+  author = {Leslie Lamport},
+  title = {LaTeX: A Document Preparation System},
+  year = {1986},
+  publisher = {Addison-Wesley}
+}</code></pre>
+
+                <h2>2. Citando no Texto</h2>
+                <p>No seu documento principal (<code>.tex</code>), use os comandos:</p>
+                <pre><code>Segundo \cite{lamport1986}, o sistema simplifica a escrita científica.
+
+% No final do arquivo para gerar a lista bibliográfica:
+\bibliographystyle{plain} % ou abntex2-alf para ABNT
+\bibliography{referencias}</code></pre>
+
+                <div class="lesson-footer">
+                    <a href="modulo4.html">&larr; Módulo Anterior</a>
+                    <a href="index.html">Voltar ao Início &rarr;</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

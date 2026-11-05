@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de LaTeX - Módulo 4</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">📄 <span>Curso de LaTeX</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Aulas</a></li>
+                <li><a href="https://github.com/iaradasilva/curso_latex" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="course-layout">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">VISÃO GERAL DO CURSO</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="index.html">O que é o LaTeX?</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">MÓDULOS</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="modulo1.html">01. Estrutura Básica</a></li>
+                    <li><a href="modulo2.html">02. Formatação de Texto</a></li>
+                    <li><a href="modulo3.html">03. Fórmulas Matemáticas</a></li>
+                    <li><a href="modulo4.html" class="active">04. Imagens e Tabelas</a></li>
+                    <li><a href="modulo5.html">05. Referências e BibTeX</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <div class="card-container">
+                <span class="badge badge-green">MÓDULO 4 • ELEMENTOS</span>
+                <h1>Imagens e Tabelas</h1>
+                <p>Como adicionar figuras e formatar tabelas personalizadas.</p>
+
+                <h2>1. Inserir Imagens</h2>
+                <p>Requer o pacote <code>\usepackage{graphicx}</code> no preâmbulo.</p>
+                <pre><code>\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{nome-da-imagem.png}
+    \caption{Legenda explicativa da imagem.}
+    \label{fig:minha_imagem}
+\end{figure}</code></pre>
+
+                <h2>2. Criar Tabelas</h2>
+                <pre><code>\begin{table}[htbp]
+    \centering
+    \caption{Exemplo de Tabela Simples}
+    \begin{tabular}{|c|l|r|}
+        \hline
+        \textbf{ID} & \textbf{Nome} & \textbf{Nota} \\ \hline
+        1 & Ana Silva & 9.5 \\
+        2 & Carlos Souza & 8.0 \\ \hline
+    \end{tabular}
+    \label{tab:exemplo}
+\end{table}</code></pre>
+
+                <div class="callout callout-info">
+                    ℹ️ Legenda da tabela: <code>c</code> (centralizado), <code>l</code> (esquerda), <code>r</code> (direita), e <code>|</code> cria linhas verticais.
+                </div>
+
+                <div class="lesson-footer">
+                    <a href="modulo3.html">&larr; Módulo Anterior</a>
+                    <a href="modulo5.html">Próximo Módulo &rarr;</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

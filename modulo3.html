@@ -61,16 +61,29 @@
         <main class="content-area">
             <div class="card-container">
                 <span class="badge badge-green">MÓDULO 3 • MATEMÁTICA</span>
-                <h1>Fórmulas Matemáticas</h1>
-                <p>Escreva equações simples e complexas utilizando os modos em linha e destacado do LaTeX.</p>
+                <h1>Fórmulas e Equações Matemáticas</h1>
+                <p>Uma das maiores forças do LaTeX é a sua capacidade de renderizar equações matemáticas complexas com qualidade de publicação.</p>
 
-                <h2>Exemplo em Linha e Destacado</h2>
-                <pre><code>Uma equação no meio do texto: $E = mc^2$.
+                <h2>1. Pacote Recomendado</h2>
+                <p>Sempre adicione o pacote <code>amsmath</code> no preâmbulo do seu arquivo para liberar todos os recursos avançados de matemática:</p>
+                <pre><code>\usepackage{amsmath}</code></pre>
 
-Uma equação destacada em bloco:
+                <h2>2. Modo em Linha (Inline)</h2>
+                <p>Para incluir símbolos ou fórmulas curtas no meio de um parágrafo, envolva a expressão entre cifrões (<code>$ ... $</code>):</p>
+                <pre><code>A famosa equação de Einstein é dada por $E = mc^2$.</code></pre>
+
+                <h2>3. Modo Destacado (Display)</h2>
+                <p>Para exibir equações centralizadas e em destaque no texto, utilize colchetes escapados <code>\[ ... \]</code>:</p>
+                <pre><code>A fórmula quadrática é definida por:
 \[
-  f(x) = \int_{0}^{\infty} e^{-x} dx
+  x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 \]</code></pre>
+
+                <h2>4. Equações Numeradas</h2>
+                <p>Para criar equações numeradas automaticamente no seu trabalho, utilize o ambiente <code>equation</code>:</p>
+                <pre><code>\begin{equation}
+  \int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+\end{equation}</code></pre>
 
                 <div class="lesson-footer">
                     <a href="modulo2.html">&larr; Módulo Anterior</a>

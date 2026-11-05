@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de LaTeX - Módulo 6</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">📄 <span>Curso de LaTeX</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Aulas</a></li>
+                <li><a href="https://github.com/iaradasilva/curso_latex" target="_blank">GitHub</a></li>
+                <li><button id="theme-toggle" class="theme-btn" onclick="toggleTheme()">☀️ Modo Claro</button></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="course-layout">
+        
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">VISÃO GERAL DO CURSO</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="index.html">O que é o LaTeX?</a></li>
+                    <li><a href="overleaf.html">Guia do Overleaf</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">MÓDULOS</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="modulo1.html">01. Estrutura Básica</a></li>
+                    <li><a href="modulo2.html">02. Formatação de Texto</a></li>
+                    <li><a href="modulo3.html">03. Fórmulas Matemáticas</a></li>
+                    <li><a href="modulo4.html">04. Imagens e Tabelas</a></li>
+                    <li><a href="modulo5.html">05. Referências e BibTeX</a></li>
+                    <li><a href="modulo6.html" class="active">06. Projeto Completo</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">EQUIPE DO CURSO</h3>
+                <div class="team-container">
+                    <div class="team-card">
+                        <div class="team-info">
+                            <a href="http://lattes.cnpq.br/3243591335541060" target="_blank" style="text-decoration: none;">
+                                <span class="team-name">Dra. Iara da Silva</span>
+                            </a>
+                            <span class="team-role">Pós-doc Projeto O3 - MOVER</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <div class="card-container">
+                <span class="badge badge-green">MÓDULO 6 • PRÁTICA INTEGRADA</span>
+                <h1>Criando um Documento Completo no Overleaf</h1>
+                <p>Aprenda a unir capa, resumo, corpo do texto e bibliografia automatizada em um único projeto.</p>
+
+                <h2>1. Estrutura do Arquivo Principal (<code>main.tex</code>)</h2>
+                <p>Copie e cole a estrutura completa abaixo no seu arquivo principal no Overleaf:</p>
+                <pre><code>\documentclass[12pt, a4paper]{article}
+
+% --- PACOTES BÁSICOS ---
+\usepackage[utf8]{utf8}        % Suporte para acentuação
+\usepackage[brazil]{babel}     % Tradução automática (ex: "Contents" -> "Sumário")
+\usepackage[margin=2.5cm]{geometry} % Configuração de margens
+\usepackage{cite}              % Suporte a citações
+
+% --- METADADOS DA CAPA ---
+\title{\textbf{Título do Seu Trabalho: Subtítulo Explicativo}}
+\author{Seu Nome Completo}
+\date{\today}                  % Data automática
+
+\begin{document}
+
+% --- 1. CAPA ---
+\maketitle
+\thispagestyle{empty}          % Oculta o número da página na capa
+\newpage
+
+% --- 2. RESUMO ---
+\pagenumbering{arabic}         % Inicia a numeração de páginas em números arábicos
+\begin{abstract}
+Este é o resumo do trabalho. Apresente aqui brevemente o objetivo da pesquisa, a metodologia empregada e os principais resultados obtidos.
+
+\vspace{0.5cm}
+\noindent \textbf{Palavras-chave:} LaTeX, Overleaf, Capa, Resumo, Bibliografia.
+\end{abstract}
+
+\newpage
+
+% --- 3. CORPO DO TEXTO ---
+\section{Introdução}
+Esta é a introdução do documento. Para citar uma referência, usamos o comando \verb|\cite{chave}|. 
+
+Por exemplo: segundo Lamport \cite{lamport1994latex}, o uso do LaTeX facilita a escrita técnica. Outro clássico da área é o trabalho de Knuth \cite{knuth1984texbook}.
+
+\section{Desenvolvimento}
+Aqui você pode organizar o conteúdo principal dividindo-o em seções e subseções.
+
+% --- 4. REFERÊNCIAS BIBLIOGRÁFICAS ---
+\bibliographystyle{plain}
+\bibliography{referencias}
+
+\end{document}</code></pre>
+
+                <h2>2. Criando o Arquivo de Bibliografia (<code>referencias.bib</code>)</h2>
+                <p>No painel lateral esquerdo do Overleaf, clique em <strong>Novo Arquivo</strong> (ícone de folha com <code>+</code>), nomeie como <code>referencias.bib</code> e insira o código abaixo:</p>
+                <pre><code>@book{lamport1994latex,
+  author    = {Leslie Lamport},
+  title     = {LaTeX: A Document Preparation System},
+  year      = {1994},
+  publisher = {Addison-Wesley}
+}
+
+@book{knuth1984texbook,
+  author    = {Donald E. Knuth},
+  title     = {The TeXbook},
+  year      = {1984},
+  publisher = {Addison-Wesley}
+}</code></pre>
+
+                <h2>3. Compilação e Resultado</h2>
+                <p>Volte ao arquivo <code>main.tex</code> e clique em <strong>Recompile</strong> (ou use a atalho <code>Ctrl + Enter</code>) para gerar o PDF completo com as páginas formatadas.</p>
+
+                <div class="lesson-footer">
+                    <a href="modulo5.html">&larr; Módulo Anterior</a>
+                    <a href="index.html">Voltar ao Início &rarr;</a>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

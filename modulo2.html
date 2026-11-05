@@ -61,13 +61,38 @@
         <main class="content-area">
             <div class="card-container">
                 <span class="badge badge-green">MÓDULO 2 • FORMATAÇÃO</span>
-                <h1>Formatação de Texto</h1>
-                <p>Aprenda a aplicar negrito, itálico, sublinhado e gerenciar listas numeradas e com marcadores no seu texto.</p>
+                <h1>Formatação de Texto e Listas</h1>
+                <p>Neste módulo você aprenderá a aplicar os estilos de texto mais comuns e a criar listas organizadas de forma simples no LaTeX.</p>
 
-                <h2>Comandos Principais</h2>
-                <pre><code>\textbf{Texto em negrito}
-\textit{Texto em itálico}
-\underline{Texto sublinhado}</code></pre>
+                <h2>1. Estilos de Fonte</h2>
+                <p>No LaTeX, aplicamos estilos no texto utilizando comandos específicos:</p>
+                <pre><code>\textbf{Este texto estará em negrito.}
+\textit{Este texto estará em itálico.}
+\underline{Este texto estará sublinhado.}
+\texttt{Texto em estilo código (monoespaçado).}</code></pre>
+
+                <h2>2. Tamanho dos Textos</h2>
+                <p>Você pode alterar o tamanho das fontes usando comandos declarativos:</p>
+                <pre><code>{\small Texto pequeno}
+{\large Texto grande}
+{\Huge Texto muito grande}</code></pre>
+
+                <h2>3. Criando Listas</h2>
+                <p>Existem dois tipos principais de ambientes para listas:</p>
+
+                <h3>Listas Não Ordenadas (Marcadores)</h3>
+                <pre><code>\begin{itemize}
+  \item Primeiro item
+  \item Segundo item
+  \item Terceiro item
+\end{itemize}</code></pre>
+
+                <h3>Listas Ordenadas (Numeradas)</h3>
+                <pre><code>\begin{enumerate}
+  \item Passo um
+  \item Passo dois
+  \item Passo três
+\end{enumerate}</code></pre>
 
                 <div class="lesson-footer">
                     <a href="modulo1.html">&larr; Módulo Anterior</a>

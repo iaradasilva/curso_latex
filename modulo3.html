@@ -39,6 +39,7 @@
                     <li><a href="modulo3.html" class="active">03. Fórmulas Matemáticas</a></li>
                     <li><a href="modulo4.html">04. Imagens e Tabelas</a></li>
                     <li><a href="modulo5.html">05. Referências e BibTeX</a></li>
+                    <li><a href="modulo6.html">06. Projeto Completo</a></li>
                 </ul>
             </div>
 
@@ -60,34 +61,16 @@
         <main class="content-area">
             <div class="card-container">
                 <span class="badge badge-green">MÓDULO 3 • MATEMÁTICA</span>
-                <h1>Fórmulas e Equações Matemáticas</h1>
-                <p>O LaTeX é o padrão mundial para a escrita de equações e notação científica.</p>
+                <h1>Fórmulas Matemáticas</h1>
+                <p>Escreva equações simples e complexas utilizando os modos em linha e destacado do LaTeX.</p>
 
-                <div class="callout callout-warning">
-                    ⚠️ <strong>Pré-requisito:</strong> Adicione <code>\usepackage{amsmath, amsfonts, amssymb}</code> no seu preâmbulo.
-                </div>
+                <h2>Exemplo em Linha e Destacado</h2>
+                <pre><code>Uma equação no meio do texto: $E = mc^2$.
 
-                <h2>1. Modo Inline (Na mesma linha)</h2>
-                <p>Escreva equações no meio do parágrafo utilizando cifrões: <code>$f(x) = x^2 + 2x + 1$</code>.</p>
-
-                <h2>2. Modo Destaque (Centralizado)</h2>
-                <pre><code>% Equação numerada
-\begin{equation}
-    E = mc^2
-\end{equation}
-
-% Frações e Raízes
-\begin{equation}
-    x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
-\end{equation}</code></pre>
-
-                <h2>3. Símbolos Comuns</h2>
-                <ul>
-                    <li>Somatório: <code>\sum_{i=1}^{n}</code></li>
-                    <li>Integral: <code>\int_{a}^{b} f(x) dx</code></li>
-                    <li>Letras Gregas: <code>\alpha, \beta, \gamma, \pi, \theta</code></li>
-                    <li>Limites: <code>\lim_{x \to \infty}</code></li>
-                </ul>
+Uma equação destacada em bloco:
+\[
+  f(x) = \int_{0}^{\infty} e^{-x} dx
+\]</code></pre>
 
                 <div class="lesson-footer">
                     <a href="modulo2.html">&larr; Módulo Anterior</a>

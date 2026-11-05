@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="styles.css">
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -14,8 +13,8 @@
         <div class="nav-container">
             <a href="#" class="logo">📄 <span>Curso de LaTeX</span></a>
             <ul class="nav-links">
-                <li><a href="#" class="active">Início</a></li>
-                <li><a href="https://github.com/iaradasilva/curso_latex" target="_blank">GitHub</a></li>
+                <li><a href="#" class="active">Aulas</a></li>
+                <li><a href="https://github.com/iaradasilva/curso_latex" target="_blank">Repositório GitHub</a></li>
             </ul>
         </div>
     </header>
@@ -26,42 +25,191 @@
         <!-- Sidebar Esquerda -->
         <aside class="sidebar">
             <div class="sidebar-section">
-                <h3 class="sidebar-title">Visão Geral</h3>
+                <h3 class="sidebar-title">VISÃO GERAL DO CURSO</h3>
                 <ul class="sidebar-menu">
-                    <li><a href="#" class="active">Introdução ao LaTeX</a></li>
+                    <li><a href="#intro" class="nav-item active" onclick="showModule('intro', this)">O que é o LaTeX?</a></li>
                 </ul>
             </div>
             
             <div class="sidebar-section">
-                <h3 class="sidebar-title">Módulos</h3>
+                <h3 class="sidebar-title">MÓDULOS</h3>
                 <ul class="sidebar-menu">
-                    <li><a href="#">01. Estrutura Básica</a></li>
-                    <li><a href="#">02. Formatação de Texto</a></li>
-                    <li><a href="#">03. Fórmulas Matemáticas</a></li>
+                    <li><a href="#mod1" class="nav-item" onclick="showModule('mod1', this)">01. Estrutura Básica</a></li>
+                    <li><a href="#mod2" class="nav-item" onclick="showModule('mod2', this)">02. Formatação de Texto</a></li>
+                    <li><a href="#mod3" class="nav-item" onclick="showModule('mod3', this)">03. Fórmulas Matemáticas</a></li>
+                    <li><a href="#mod4" class="nav-item" onclick="showModule('mod4', this)">04. Imagens e Tabelas</a></li>
+                    <li><a href="#mod5" class="nav-item" onclick="showModule('mod5', this)">05. Referências e BibTeX</a></li>
                 </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">EQUIPE DO CURSO</h3>
+                <div class="team-container">
+                    <div class="team-card">
+                        <div class="team-info">
+                            <span class="team-name">Profa. Iara da Silva</span>
+                            <span class="team-role">Instrutora</span>
+                            <span class="team-institution">Universidade</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </aside>
 
-        <!-- Conteúdo Principal -->
+        <!-- Área de Conteúdo Central -->
         <main class="content-area">
-            <div class="card-container">
-                <span class="badge badge-green">Módulo 1 • Configuração</span>
-                <h1>Instalação e Primeiro Documento</h1>
-                <p>Bem-vindo ao curso de LaTeX! Aqui você aprenderá a criar documentos acadêmicos, artigos e apresentações de alto nível.</p>
-                
-                <div class="callout callout-tip">
-                    💡 **Dica:** Recomendamos utilizar o Overleaf para iniciar sem criar instalações locais.
+
+            <!-- Módulo: Introdução -->
+            <div id="intro" class="module-content">
+                <div class="card-container">
+                    <span class="badge badge-green">INÍCIO • BOAS-VINDAS</span>
+                    <h1>O que é o LaTeX?</h1>
+                    <p>O LaTeX é um sistema de preparação de documentos muito utilizado pela comunidade científica e acadêmica para a publicação de artigos, dissertações, teses e livros.</p>
+                    
+                    <div class="callout callout-tip">
+                        💡 <strong>Por que usar LaTeX?</strong> Ao contrário dos editores tradicionais (como Word ou Google Docs), no LaTeX você foca na estrutura lógica do conteúdo, e o sistema cuida do design e da tipografia de forma profissional.
+                    </div>
+
+                    <h2>Como começar?</h2>
+                    <p>Recomendamos a utilização de plataformas em nuvem para evitar a necessidade de instalação local de editores no início:</p>
+                    <ul>
+                        <li><strong>Overleaf:</strong> Editor online gratuito com compilação em tempo real. Basta criar uma conta em <a href="https://www.overleaf.com" target="_blank" style="color: var(--accent-green);">overleaf.com</a>.</li>
+                        <li><strong>Instalação Local (Opcional):</strong> MiKTeX ou TeX Live + VS Code / TeXstudio.</li>
+                    </ul>
                 </div>
-
-                <h2>Exemplo de Código Base</h2>
-                <pre><code>\documentclass{article}
-\begin{document}
-    Olá, mundo! Meu primeiro documento em LaTeX.
-\end{document}</code></pre>
             </div>
-        </main>
 
+            <!-- Módulo 01 -->
+            <div id="mod1" class="module-content" style="display: none;">
+                <div class="card-container">
+                    <span class="badge badge-green">MÓDULO 1 • SINTAXE</span>
+                    <h1>Estrutura Básica de um Documento</h1>
+                    <p>Todo documento em LaTeX divide-se em duas partes principais: o <strong>preâmbulo</strong> (configurações e pacotes) e o <strong>corpo do documento</strong> (conteúdo visível).</p>
+                    
+                    <h2>Exemplo Mínimo Funcional</h2>
+                    <pre><code>\documentclass[12pt, a4paper]{article}
+
+% Preâmbulo (pacotes e configurações)
+\usepackage[utf8]{inputenc}
+\usepackage[pt-BR]{babel}
+
+\title{Meu Primeiro Documento}
+\author{Nome do Aluno}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introdução}
+Este é o meu primeiro documento criado em LaTeX durante o curso na universidade!
+
+\end{document}</code></pre>
+
+                    <div class="callout callout-info">
+                        ℹ️ <strong>Atenção:</strong> Todo o texto do seu documento precisa estar obrigatoriamente dentro do ambiente <code>\begin{document}</code> e <code>\end{document}</code>.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Módulo 02 -->
+            <div id="mod2" class="module-content" style="display: none;">
+                <div class="card-container">
+                    <span class="badge badge-green">MÓDULO 2 • ESTILIZAÇÃO</span>
+                    <h1>Formatação de Texto e Seções</h1>
+                    <p>Aprenda a organizar seu texto em seções lógicas e aplicar estilos tipográficos nos termos importantes.</p>
+
+                    <h2>Divisão de Seções</h2>
+                    <pre><code>\section{Título Principal}
+\subsection{Subtítulo}
+\subsubsection{Sub-subtítulo}</code></pre>
+
+                    <h2>Estilos de Fonte</h2>
+                    <ul>
+                        <li><code>\textbf{Texto em Negrito}</code> &rarr; <strong>Texto em Negrito</strong></li>
+                        <li><code>\textit{Texto em Itálico}</code> &rarr; <em>Texto em Itálico</em></li>
+                        <li><code>\underline{Texto Sublinhado}</code> &rarr; <u>Texto Sublinhado</u></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Módulo 03 -->
+            <div id="mod3" class="module-content" style="display: none;">
+                <div class="card-container">
+                    <span class="badge badge-green">MÓDULO 3 • MATEMÁTICA</span>
+                    <h1>Fórmulas e Equações Matemáticas</h1>
+                    <p>Uma das maiores forças do LaTeX é a facilidade para formatar equações complexas.</p>
+
+                    <div class="callout callout-warning">
+                        ⚠️ <strong>Dica de Pacote:</strong> Lembre-se de adicionar <code>\usepackage{amsmath}</code> no seu preâmbulo para ter acesso a todos os recursos matemáticos.
+                    </div>
+
+                    <h2>Modo Inline (No meio do texto)</h2>
+                    <p>Para adicionar fórmulas na mesma linha do texto, utilize cifrões: <code>$E = mc^2$</code>.</p>
+
+                    <h2>Modo Destaque (Centralizado)</h2>
+                    <pre><code>\begin{equation}
+    f(x) = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\end{equation}</code></pre>
+                </div>
+            </div>
+
+            <!-- Módulo 04 -->
+            <div id="mod4" class="module-content" style="display: none;">
+                <div class="card-container">
+                    <span class="badge badge-green">MÓDULO 4 • ELEMENTOS</span>
+                    <h1>Inserção de Imagens e Tabelas</h1>
+                    <p>Como adicionar figuras e criar tabelas organizadas no seu trabalho.</p>
+
+                    <h2>Inserindo Imagens</h2>
+                    <p>Requer o pacote <code>\usepackage{graphicx}</code> no preâmbulo.</p>
+                    <pre><code>\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imagem.png}
+    \caption{Legenda da Imagem}
+    \label{fig:minha_imagem}
+\end{figure}</code></pre>
+                </div>
+            </div>
+
+            <!-- Módulo 05 -->
+            <div id="mod5" class="module-content" style="display: none;">
+                <div class="card-container">
+                    <span class="badge badge-green">MÓDULO 5 • BIBLIOGRAFIA</span>
+                    <h1>Gestão de Referências com BibTeX</h1>
+                    <p>Gerencie citação e referências bibliográficas de forma automatizada.</p>
+
+                    <h2>Criando o arquivo de referências (<code>referencias.bib</code>)</h2>
+                    <pre><code>@article{einstein1905,
+  author = {Albert Einstein},
+  title = {Zur Elektrodynamik bewegter Körper},
+  journal = {Annalen der Physik},
+  year = {1905}
+}</code></pre>
+
+                    <h2>Citando no texto</h2>
+                    <p>Use o comando <code>\cite{einstein1905}</code> no seu documento para gerar a citação automática.</p>
+                </div>
+            </div>
+
+        </main>
     </div>
 
-</body>
-</html>
+    <!-- Script para Navegação sem recarregar a página -->
+    <script>
+        function showModule(moduleId, element) {
+            // Esconde todas as seções de conteúdo
+            const modules = document.querySelectorAll('.module-content');
+            modules.forEach(mod => mod.style.display = 'none');
+
+            // Exibe a seção selecionada
+            const targetModule = document.getElementById(moduleId);
+            if (targetModule) {
+                targetModule.style.display = 'block';
+            }
+
+            // Atualiza a classe ativa na barra lateral
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => item.classList.remove('active'));
+            if (element) {
+                element.classList.add('active');

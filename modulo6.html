@@ -77,14 +77,14 @@
             <div class="card-container">
                 <span class="badge badge-green">MÓDULO 6 • LAB PRÁTICO</span>
                 <h1>Passo a Passo: Criando seu Primeiro Documento Completo</h1>
-                <p>Nesta aula prática, você irá construir um trabalho acadêmico estruturado contendo Capa, Resumo, Introdução, Metodologia, Resultados, Conclusão e Bibliografia.</p>
+                <p>Nesta aula prática, você irá construir um trabalho acadêmico estruturado contendo Capa, Resumo, Introdução, Metodologia, Resultados, Conclusão e Referências Bibliográficas.</p>
 
                 <div class="callout callout-tip">
-                    💡 <strong>Dica de Compilação:</strong> Copie o código do arquivo principal no <code>main.tex</code> e crie o arquivo <code>referencias.bib</code> no Overleaf para que a compilação ocorra sem erros.
+                    💡 <strong>Como funciona a divisão das páginas?</strong> No LaTeX, o comando <code>\newpage</code> força o início de uma nova página (usado após a Capa e após o Resumo). As seções do texto (Introdução, Metodologia, Resultados e Conclusão) fluem naturalmente sequenciadas.
                 </div>
 
                 <h2>Passo 1: Código Completo do Documento (<code>main.tex</code>)</h2>
-                <p>Substitua todo o conteúdo do seu arquivo <code>main.tex</code> pelo código abaixo:</p>
+                <p>Abra seu projeto no Overleaf e cole o código abaixo no arquivo principal <code>main.tex</code>:</p>
 
                 <pre><code>\documentclass[12pt, a4paper]{article}
 
@@ -101,12 +101,12 @@
 
 \begin{document}
 
-% --- 1. CAPA ---
+% --- PÁGINA 1: CAPA ---
 \maketitle
 \thispagestyle{empty}          % Oculta o número da página na capa
-\newpage
+\newpage                       % Pula para a próxima página
 
-% --- 2. RESUMO ---
+% --- PÁGINA 2: RESUMO ---
 \pagenumbering{arabic}         % Inicia a numeração de páginas em números arábicos
 \begin{abstract}
 Este é o resumo do trabalho. Apresente aqui brevemente o objetivo da pesquisa, a metodologia empregada e os principais resultados obtidos.
@@ -115,9 +115,9 @@ Este é o resumo do trabalho. Apresente aqui brevemente o objetivo da pesquisa, 
 \noindent \textbf{Palavras-chave:} LaTeX, Overleaf, Capa, Resumo, Bibliografia.
 \end{abstract}
 
-\newpage
+\newpage                       % Pula para a página do conteúdo principal
 
-% --- 3. CORPO DO TEXTO (SEÇÕES DO TRABALHO) ---
+% --- PÁGINA 3 EM DIANTE: SEÇÕES DO TRABALHO ---
 \section{Introdução}
 Esta é a introdução do documento. Apresente o contexto do seu trabalho e os seus objetivos. Para citar uma referência, usamos o comando \verb|\cite{chave}|. 
 
@@ -132,18 +132,18 @@ Apresente aqui os dados obtidos durante a pesquisa. Você pode incluir tabelas, 
 \section{Conclusão}
 Sintetize as principais conclusões alcançadas, verifique se os objetivos foram atingidos e sugira trabalhos futuros.
 
-% --- 4. REFERÊNCIAS BIBLIOGRÁFICAS ---
+% --- REFERÊNCIAS BIBLIOGRÁFICAS ---
 \bibliographystyle{plain}
 \bibliography{referencias}
 
 \end{document}</code></pre>
 
                 <h2>Passo 2: Criar o Arquivo de Bibliografia (<code>referencias.bib</code>)</h2>
-                <p>Para que as citações funcionem perfeitamente:</p>
+                <p>Para que as citações funcionem perfeitamente no seu documento:</p>
                 <ol>
-                    <li>No painel lateral esquerdo do Overleaf, clique no ícone de <strong>Novo Arquivo</strong> (folha com sinal de <code>+</code>).</li>
-                    <li>Nomeie o arquivo exatamente como <code>referencias.bib</code> e clique em <strong>Create</strong>.</li>
-                    <li>Cole os dados BibTeX abaixo dentro do arquivo <code>referencias.bib</code>:</li>
+                    <li>No painel lateral esquerdo do Overleaf, clique no ícone de <strong>Novo Arquivo</strong> (ícone de folha com o sinal <code>+</code>).</li>
+                    <li>Digite exatamente o nome <code>referencias.bib</code> e clique em <strong>Create</strong>.</li>
+                    <li>Cole a estrutura de citações BibTeX abaixo dentro desse novo arquivo:</li>
                 </ol>
 
                 <pre><code>@book{lamport1994latex,
@@ -161,12 +161,11 @@ Sintetize as principais conclusões alcançadas, verifique se os objetivos foram
 }</code></pre>
 
                 <h2>Passo 3: Compilar no Overleaf</h2>
-                <p>Clique no botão verde <strong>Recompile</strong> (ou pressione <code>Ctrl + Enter</code>). O Overleaf compilará o PDF gerando automaticamente:</p>
+                <p>Com os dois arquivos criados, clique no botão verde <strong>Recompile</strong> (ou pressione <code>Ctrl + Enter</code>). O compilador vai gerar o PDF com:</p>
                 <ul>
-                    <li>A capa formatada na primeira página (sem numeração).</li>
-                    <li>A página de resumo com numeração arábica.</li>
-                    <li>As 4 seções estruturadas (Introdução, Metodologia, Resultados e Conclusão).</li>
-                    <li>A lista final de Referências Bibliográficas com as fontes citadas no texto.</li>
+                    <li><strong>Página 1:</strong> Capa formatada sem numeração visível.</li>
+                    <li><strong>Página 2:</strong> Resumo com contagem de página iniciando em arábico.</li>
+                    <li><strong>Página 3 em diante:</strong> As 4 seções ordenadas (Introdução, Metodologia, Resultados e Conclusão) seguidas da lista de Referências Bibliográficas.</li>
                 </ul>
 
                 <div class="lesson-footer">

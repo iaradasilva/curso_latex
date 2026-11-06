@@ -18,23 +18,23 @@
             object-fit: cover;
             border: 2px solid var(--primary-color, #4CAF50);
         }
-        /* Ajuste do grid para alinhar 2 por 2 perfeitamente */
+
+        /* Força a exibição em 2 colunas no desktop/tablet e 1 no celular */
         .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 15px !important;
+            margin-top: 15px !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
         }
-        @media (min-width: 600px) {
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr); /* Força 2 colunas no desktop/tablet */
-            }
-        }
+
         .skill-card {
             background-color: rgba(76, 175, 80, 0.08);
             border-left: 4px solid #4CAF50;
             padding: 14px 16px;
             border-radius: 6px;
+            box-sizing: border-box;
         }
         .skill-card h4 {
             margin: 0 0 6px 0;
@@ -43,6 +43,12 @@
         .skill-card p {
             margin: 0;
             font-size: 0.9em;
+        }
+
+        @media (max-width: 550px) {
+            .skills-grid {
+                grid-template-columns: 1fr !important; /* 1 coluna no celular para não espremer o texto */
+            }
         }
     </style>
 </head>

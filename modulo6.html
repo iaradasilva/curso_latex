@@ -75,55 +75,62 @@
 
         <main class="content-area">
             <div class="card-container">
-                <span class="badge badge-green">MÓDULO 6 • PROJETO MODULAR</span>
-                <h1>Organizando um Trabalho Completo com Multi-Arquivos</h1>
-                <p>Projetos acadêmicos longos tornam-se difíceis de manter quando colocamos todo o texto em um único arquivo. A melhor prática em LaTeX é dividir o documento em capítulos (arquivos <code>.tex</code> separados) e unificá-los no <code>main.tex</code> usando o comando <code>\input{}</code>.</p>
+                <span class="badge badge-green">MÓDULO 6 • LAB PRÁTICO</span>
+                <h1>Passo a Passo: Criando seu Primeiro Documento Completo</h1>
+                <p>Nesta aula prática, você irá construir um trabalho acadêmico estruturado contendo Capa, Resumo, Introdução, Metodologia, Resultados, Conclusão e Bibliografia.</p>
 
                 <div class="callout callout-tip">
-                    💡 <strong>Vantagem da Organização Modular:</strong> Facilita a leitura do código, evita erros de sintaxe confusos e permite focar na escrita de cada capítulo separadamente.
+                    💡 <strong>Dica de Compilação:</strong> Copie o código do arquivo principal no <code>main.tex</code> e crie o arquivo <code>referencias.bib</code> no Overleaf para que a compilação ocorra sem erros.
                 </div>
 
-                <h2>Etapa 1: Estrutura Principal (<code>main.tex</code>)</h2>
-                <p>O arquivo principal gerencia as configurações gerais, carrega os pacotes, gera a capa, o resumo e chama cada seção com o comando <code>\input{nome_do_arquivo}</code>:</p>
+                <h2>Passo 1: Código Completo do Documento (<code>main.tex</code>)</h2>
+                <p>Substitua todo o conteúdo do seu arquivo <code>main.tex</code> pelo código abaixo:</p>
 
                 <pre><code>\documentclass[12pt, a4paper]{article}
 
 % --- PACOTES BÁSICOS ---
-\usepackage[utf8]{inputenc}    % Suporte a caracteres acentuados
-\usepackage[brazil]{babel}     % Tradução automática para português
-\usepackage[margin=2.5cm]{geometry} % Margens da página
-\usepackage{graphicx}          % Suporte a imagens
-\usepackage{amsmath, amssymb}  % Suporte a equações matemáticas
-\usepackage{cite}              % Suporte a citações bibliográficas
+\usepackage[utf8]{inputenc}    % Suporte para acentuação
+\usepackage[brazil]{babel}     % Tradução automática (ex: "Contents" -> "Sumário")
+\usepackage[margin=2.5cm]{geometry} % Configuração de margens
+\usepackage{cite}              % Suporte a citações
 
 % --- METADADOS DA CAPA ---
-\title{\textbf{Título do Trabalho Acadêmico: Subtítulo}}
+\title{\textbf{Título do Seu Trabalho: Subtítulo Explicativo}}
 \author{Seu Nome Completo}
-\date{\today}
+\date{\today}                   % Data automática
 
 \begin{document}
 
 % --- 1. CAPA ---
 \maketitle
-\thispagestyle{empty}
+\thispagestyle{empty}          % Oculta o número da página na capa
 \newpage
 
 % --- 2. RESUMO ---
-\pagenumbering{arabic}
+\pagenumbering{arabic}         % Inicia a numeração de páginas em números arábicos
 \begin{abstract}
-Este é o resumo do seu trabalho. Apresente aqui brevemente o objetivo da pesquisa, a metodologia aplicada e os principais resultados encontrados.
+Este é o resumo do trabalho. Apresente aqui brevemente o objetivo da pesquisa, a metodologia empregada e os principais resultados obtidos.
 
 \vspace{0.5cm}
-\noindent \textbf{Palavras-chave:} LaTeX, Overleaf, Estrutura Modular, Artigo Acadêmico.
+\noindent \textbf{Palavras-chave:} LaTeX, Overleaf, Capa, Resumo, Bibliografia.
 \end{abstract}
 
 \newpage
 
-% --- 3. INCLUSÃO DAS SEÇÕES (ARQUIVOS SEPARADOS) ---
-\input{introducao.tex}
-\input{metodologia.tex}
-\input{resultados.tex}
-\input{conclusao.tex}
+% --- 3. CORPO DO TEXTO (SEÇÕES DO TRABALHO) ---
+\section{Introdução}
+Esta é a introdução do documento. Apresente o contexto do seu trabalho e os seus objetivos. Para citar uma referência, usamos o comando \verb|\cite{chave}|. 
+
+Por exemplo: segundo Lamport \cite{lamport1994latex}, o uso do LaTeX facilita a escrita técnica. Outro clássico da área é o trabalho de Knuth \cite{knuth1984texbook}.
+
+\section{Metodologia}
+Descreva nesta seção os materiais, métodos, procedimentos ou ferramentas computacionais utilizadas para a realização da pesquisa.
+
+\section{Resultados e Discussão}
+Apresente aqui os dados obtidos durante a pesquisa. Você pode incluir tabelas, gráficos, figuras ou equações para ilustrar os resultados.
+
+\section{Conclusão}
+Sintetize as principais conclusões alcançadas, verifique se os objetivos foram atingidos e sugira trabalhos futuros.
 
 % --- 4. REFERÊNCIAS BIBLIOGRÁFICAS ---
 \bibliographystyle{plain}
@@ -131,37 +138,13 @@ Este é o resumo do seu trabalho. Apresente aqui brevemente o objetivo da pesqui
 
 \end{document}</code></pre>
 
-                <h2>Etapa 2: Criando as Páginas/Capítulos Separados</h2>
-                <p>No painel do Overleaf (ícone de <strong>Novo Arquivo <code>+</code></strong>), crie 4 arquivos com os nomes abaixo e cole seus conteúdos correspondentes:</p>
-
-                <h3>1. <code>introducao.tex</code></h3>
-                <pre><code>\section{Introdução}
-Esta é a introdução do trabalho. Apresente o tema principal, a justificativa e o objetivo da pesquisa.
-
-Segundo Lamport \cite{lamport1994latex}, o sistema LaTeX facilita a automação de documentos técnicos.</code></pre>
-
-                <h3>2. <code>metodologia.tex</code></h3>
-                <pre><code>\section{Metodologia}
-Descreva nesta seção os materiais, ferramentas e procedimentos utilizados no desenvolvimento do trabalho.
-
-\subsection{Materiais e Equipamentos}
-Apresente os insumos ou programas utilizados durante a coleta ou processamento dos dados.
-
-\subsection{Procedimento Experimental}
-Explique detalhadamente o passo a passo da metodologia aplicada.</code></pre>
-
-                <h3>3. <code>resultados.tex</code></h3>
-                <pre><code>\section{Resultados e Discussão}
-Exponha os dados obtidos com o estudo, utilizando tabelas, figuras e gráficos explicativos.
-
-Por exemplo, os conceitos descritos por Knuth \cite{knuth1984texbook} sustentam a importância da tipografia matemática exata.</code></pre>
-
-                <h3>4. <code>conclusao.tex</code></h3>
-                <pre><code>\section{Conclusão}
-Sintetize as principais descobertas do trabalho, responda aos objetivos propostos e sugira trabalhos futuros.</code></pre>
-
-                <h2>Etapa 3: Ficheiro de Referências (<code>referencias.bib</code>)</h2>
-                <p>Crie um arquivo chamado <code>referencias.bib</code> e cole os dados das citações:</p>
+                <h2>Passo 2: Criar o Arquivo de Bibliografia (<code>referencias.bib</code>)</h2>
+                <p>Para que as citações funcionem perfeitamente:</p>
+                <ol>
+                    <li>No painel lateral esquerdo do Overleaf, clique no ícone de <strong>Novo Arquivo</strong> (folha com sinal de <code>+</code>).</li>
+                    <li>Nomeie o arquivo exatamente como <code>referencias.bib</code> e clique em <strong>Create</strong>.</li>
+                    <li>Cole os dados BibTeX abaixo dentro do arquivo <code>referencias.bib</code>:</li>
+                </ol>
 
                 <pre><code>@book{lamport1994latex,
   author    = {Leslie Lamport},
@@ -177,9 +160,14 @@ Sintetize as principais descobertas do trabalho, responda aos objetivos proposto
   publisher = {Addison-Wesley}
 }</code></pre>
 
-                <div class="callout callout-info">
-                    ℹ️ <strong>Nota de Compilação:</strong> O comando <code>\input{nome_do_arquivo}</code> lê o conteúdo do arquivo como se ele estivesse digitado diretamente dentro do <code>main.tex</code>. Por isso, <strong>não adicione</strong> <code>\begin{document}</code> nem preâmbulo nos arquivos secundários (`introducao.tex`, `metodologia.tex`, etc.).
-                </div>
+                <h2>Passo 3: Compilar no Overleaf</h2>
+                <p>Clique no botão verde <strong>Recompile</strong> (ou pressione <code>Ctrl + Enter</code>). O Overleaf compilará o PDF gerando automaticamente:</p>
+                <ul>
+                    <li>A capa formatada na primeira página (sem numeração).</li>
+                    <li>A página de resumo com numeração arábica.</li>
+                    <li>As 4 seções estruturadas (Introdução, Metodologia, Resultados e Conclusão).</li>
+                    <li>A lista final de Referências Bibliográficas com as fontes citadas no texto.</li>
+                </ul>
 
                 <div class="lesson-footer">
                     <a href="modulo5.html">&larr; Módulo 5 (Referências)</a>

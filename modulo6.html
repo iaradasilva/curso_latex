@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso de LaTeX - Módulo 6</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .team-info-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .team-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color, #4CAF50);
+        }
+    </style>
 </head>
 <body>
 
@@ -48,7 +62,8 @@
                 <div class="team-container">
                     <div class="team-card">
                         <div class="team-info">
-                            <a href="http://lattes.cnpq.br/3243591335541060" target="_blank" style="text-decoration: none;">
+                            <a href="http://lattes.cnpq.br/3243591335541060" target="_blank" style="text-decoration: none;" class="team-info-header">
+                                <img src="https://github.com/iaradasilva.png" alt="Dra. Iara da Silva" class="team-avatar">
                                 <span class="team-name">Dra. Iara da Silva</span>
                             </a>
                             <span class="team-role">Pós-doc Projeto O3 - MOVER</span>
@@ -136,23 +151,4 @@ Escreva aqui o desenvolvimento do seu trabalho, inserindo tabelas, figuras ou f�
                 <p>No final do seu arquivo <code>main.tex</code>, antes do <code>\end{document}</code>, conecte o estilo da bibliografia e o arquivo <code>.bib</code>:</p>
                 <pre><code>% --- REFERÊNCIAS BIBLIOGRÁFICAS ---
 \bibliographystyle{plain}
-\bibliography{referencias}
-
-\end{document}</code></pre>
-
-                <div class="callout callout-tip">
-                    💡 <strong>Passo Final:</strong> Clique no botão verde ou azul <strong>Recompile</strong> no topo da tela do Overleaf (ou use <code>Ctrl + Enter</code>) para ver o seu PDF de múltiplas páginas gerado com sucesso!
-                </div>
-
-                <div class="lesson-footer">
-                    <a href="modulo5.html">&larr; Módulo Anterior</a>
-                    <a href="index.html">Voltar ao Início &rarr;</a>
-                </div>
-            </div>
-        </main>
-
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
+\bibliography{
